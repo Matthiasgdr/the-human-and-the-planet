@@ -1,2 +1,27 @@
-body {
+.begin {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: #000; }
+  .begin-button {
+    padding: 30px;
+    color: white;
+    border: 1px solid white;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+    text-transform: uppercase; }
+    .begin-button:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: scale(1.05);
+      transform-origin: center; }
+    .begin-button.clicked {
+      padding: 50px;
+      filter: blur(5px);
+      opacity: 0; }
