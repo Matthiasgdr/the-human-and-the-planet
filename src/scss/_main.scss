@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter|Playfair+Display');
+
 .begin{
     position: absolute;
     display: flex;
@@ -8,6 +10,7 @@
     right:0;
     bottom:0;
     background: #000;
+    z-index: 1;
     &-button{
         padding: 30px;
         color: white;
@@ -17,6 +20,7 @@
         user-select: none;
         transition: all 0.3s;
         text-transform: uppercase;
+        will-change: transform;
         &:hover{
             background: rgba(255,255,255, 0.1);
             transform: scale(1.05);
@@ -27,5 +31,56 @@
             filter: blur(5px);
             opacity: 0;
         }
+    }
+}
+
+.introduction{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: #000;
+    .sentence-container{
+        position: relative;
+        width: 800px;
+        .sentence{
+            position: absolute;
+            left: 50%;
+            text-align: center;
+            margin: 0 auto;
+            color: white;
+            font-size: 38px;
+            font-family: 'Bitter', serif;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 0;
+            &.sentence-1{animation-delay: 0s}
+            &.sentence-2{animation-delay: 2.5s}
+            &.sentence-3{animation-delay: 5s}
+            &.sentence-4{animation-delay: 7.5s}
+           
+        }
+        .animation{
+            animation-name: opacity;
+            animation-duration: 2.5s;
+        }
+    }
+}
+
+@keyframes opacity{
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
     }
 }
