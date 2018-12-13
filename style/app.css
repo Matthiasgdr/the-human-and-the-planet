@@ -14,10 +14,12 @@ body {
   z-index: 2; }
   .begin-button {
     padding: 30px;
+    margin: 0 0 200px 0;
     color: white;
     border: 1px solid white;
     border-radius: 50px;
     font-size: 30px;
+    font-family: "Bitter", serif;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s;
@@ -29,8 +31,8 @@ body {
       transform-origin: center; }
     .begin-button.clicked {
       padding: 50px;
-      filter: blur(5px);
-      opacity: 0; }
+      opacity: 0;
+      filter: blur(5px); }
 
 .introduction {
   position: absolute;
@@ -44,6 +46,7 @@ body {
   .introduction .sentence-container {
     position: relative;
     width: 1200px;
+    margin: 0 0 500px 0;
     z-index: 1; }
     .introduction .sentence-container .sentence {
       position: absolute;
@@ -79,29 +82,29 @@ body {
       right: 0;
       bottom: 0;
       background-size: cover;
-      background-position: center; }
-      .introduction .hero .picture.picture-1 {
-        background-image: url(../images/1.png);
+      background-position: center;
+      transition: transform 0.3s; }
+      .introduction .hero .picture.picture-5 {
+        background-image: url(../images/5.png);
         animation-delay: 0s; }
-      .introduction .hero .picture.picture-2 {
-        background-image: url(../images/2.png);
+      .introduction .hero .picture.picture-4 {
+        background-image: url(../images/4.png);
         animation-delay: 0.5s; }
       .introduction .hero .picture.picture-3 {
         background-image: url(../images/3.png);
         animation-delay: 1s; }
-      .introduction .hero .picture.picture-4 {
-        background-image: url(../images/4.png);
+      .introduction .hero .picture.picture-2 {
+        background-image: url(../images/2.png);
         animation-delay: 1.5s; }
-      .introduction .hero .picture.picture-5 {
-        background-image: url(../images/5.png);
+      .introduction .hero .picture.picture-1 {
+        background-image: url(../images/1.png);
         animation-delay: 2s; }
-      .introduction .hero .picture.picture-6 {
-        background-image: url(../images/6.png);
-        animation-delay: 0s; }
+      .introduction .hero .picture.picture-0 {
+        background-image: url(../images/0.png); }
     .introduction .hero .animation {
+      animation-name: translate;
       animation-play-state: paused;
       animation-duration: 2s;
-      animation-name: translate;
       animation-fill-mode: both;
       animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
       animation-iteration-count: 1; }
