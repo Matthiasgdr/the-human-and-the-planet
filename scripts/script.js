@@ -23,10 +23,10 @@ function intro(){
         const element = introductionSentences[i];
         element.classList.add('animation')
     }
-    setTimeout(() => {changeField(2)}, 2000)
-    setTimeout(() => {changeField(3)}, 4500)
-    setTimeout(() => {changeField(4)}, 6000)
-    setTimeout(() => {changeField(5)}, 7000)
+    setTimeout(() => {changeField(2)}, 3500)
+    setTimeout(() => {changeField(3)}, 7000)
+    setTimeout(() => {changeField(4)}, 10500)
+    setTimeout(() => {changeField(5)}, 14000)
 }
 function changeField(index){
    for (let i = 0; i < introductionPictures.length; i++) {

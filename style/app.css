@@ -61,14 +61,18 @@ body {
       .introduction .sentence-container .sentence.sentence-1 {
         animation-delay: 0s; }
       .introduction .sentence-container .sentence.sentence-2 {
-        animation-delay: 2.5s; }
+        animation-delay: 3.5s; }
       .introduction .sentence-container .sentence.sentence-3 {
-        animation-delay: 5s; }
+        animation-delay: 7s; }
       .introduction .sentence-container .sentence.sentence-4 {
-        animation-delay: 7.5s; }
+        animation-delay: 10.5s; }
+      .introduction .sentence-container .sentence.sentence-5 {
+        animation-delay: 14s; }
+      .introduction .sentence-container .sentence.sentence-6 {
+        animation-delay: 17.5s; }
     .introduction .sentence-container .animation {
       animation-name: opacity;
-      animation-duration: 2.5s; }
+      animation-duration: 3.5s; }
   .introduction .hero {
     position: absolute;
     top: 0;
@@ -106,7 +110,7 @@ body {
       animation-play-state: paused;
       animation-duration: 2s;
       animation-fill-mode: both;
-      animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+      animation-timing-function: cubic-bezier(0, 0, 0.06, 1);
       animation-iteration-count: 1; }
     .introduction .hero .run {
       animation-play-state: running; }

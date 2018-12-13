@@ -62,14 +62,16 @@ body{
             transform: translateX(-50%) translateY(-50%);
             opacity: 0;
             &.sentence-1{animation-delay: 0s}
-            &.sentence-2{animation-delay: 2.5s}
-            &.sentence-3{animation-delay: 5s}
-            &.sentence-4{animation-delay: 7.5s}
+            &.sentence-2{animation-delay: 3.5s}
+            &.sentence-3{animation-delay: 7s}
+            &.sentence-4{animation-delay: 10.5s}
+            &.sentence-5{animation-delay: 14s}
+            &.sentence-6{animation-delay: 17.5s}
            
         }
         .animation{
             animation-name: opacity;
-            animation-duration: 2.5s;
+            animation-duration: 3.5s;
         }  
     }
     .hero{
@@ -120,7 +122,7 @@ body{
             animation-play-state: paused;
             animation-duration: 2s;
             animation-fill-mode: both;
-            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-timing-function: ease-in-out);
             animation-iteration-count: 1;
         }
         .run{
