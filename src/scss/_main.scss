@@ -16,6 +16,7 @@ body{
         padding: 30px;
         color: white;
         border: 1px solid white;
+        border-radius: 50px;
         font-size: 30px;
         cursor: pointer;
         user-select: none;
@@ -85,41 +86,36 @@ body{
             background-position: center;
             &.picture-1{
                 background-image:url(../images/1.png);
-                animation-duration: 2s;
                 animation-delay: 0s;
             }
             &.picture-2{
                 background-image:url(../images/2.png);
-                animation-duration: 2s;
                 animation-delay: 0.5s;
 
             }
             &.picture-3{
                 background-image:url(../images/3.png);
-                animation-duration: 2s;
                 animation-delay: 1s;
 
             }
             &.picture-4{
                 background-image:url(../images/4.png);
-                animation-duration: 2s;
                 animation-delay: 1.5s;
 
             }
             &.picture-5{
                 background-image:url(../images/5.png);
-                animation-duration: 2s;
                 animation-delay: 2s;
 
             }    
             &.picture-6{
                 background-image:url(../images/6.png);
-                animation-duration: 0s;
                 animation-delay: 0s;
             }
         }
         .animation{
             animation-play-state: paused;
+            animation-duration: 2s;
             animation-name: translate;
             animation-fill-mode: both;
             animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
@@ -135,7 +131,7 @@ body{
         transform:translateY(200px);
     }
     100%{
-        transform: translateY(0px);
+        transform:translateY(0px);
     }
 }
 @keyframes opacity{
