@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Bitter|Playfair+Display");
 body {
-  overflow: hidden; }
+  overflow: visible; }
 
 .begin {
   position: absolute;
@@ -89,7 +89,7 @@ body {
       right: 0;
       bottom: 0;
       background-size: cover;
-      background-position: center;
+      background-position: bottom;
       transition: transform 0.3s; }
       .introduction .hero .picture.picture-5 {
         background-image: url(../images/5.png);
@@ -135,10 +135,30 @@ body {
     opacity: 0; } }
 
 .mission-container {
-  height: 100vh;
-  background-image: url(../images/bg-mission.png);
-  background-size: cover;
-  background-origin: center; }
+  position: relative;
+  height: 100vh; }
+  .mission-container .bg-mission {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/bg-mission.png);
+    background-size: cover;
+    background-position: bottom; }
+
+.rocket-container {
+  position: relative;
+  height: 100vh; }
+  .rocket-container .bg-rocket {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/bg-rocket.png);
+    background-size: cover;
+    background-position: bottom; }
 
 .container {
   display: flex;

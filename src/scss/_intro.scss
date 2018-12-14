@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Bitter|Playfair+Display');
 body{
-    overflow: hidden;
+    overflow: visible;
 }
 
 // ECRAN DU BOUTON COMMENCER ET BOUTON COMMENCER
@@ -95,7 +95,7 @@ body{
             right:0;
             bottom:0;
             background-size: cover;
-            background-position: center;
+            background-position: bottom;
             transition: transform 0.3s;
             &.picture-5{
                 background-image:url(../images/5.png);

@@ -1,14 +1,13 @@
-.mission-container{
+.rocket-container{
     position: relative;
     height: 100vh;
-
-    .bg-mission{
+    .bg-rocket{
         position: absolute;
         top:0;
         left:0;
         right:0;
         bottom:0;
-        background-image: url(../images/bg-mission.png);
+        background-image: url(../images/bg-rocket.png);
         background-size: cover;
         background-position: bottom;
     }

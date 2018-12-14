@@ -11,4 +11,5 @@ gulp.task('sass:watch', function () {
   gulp.watch('src/scss/app.scss', ['sass']);
   gulp.watch('src/scss/_intro.scss', ['sass']);
   gulp.watch('src/scss/_mission.scss', ['sass']);
+  gulp.watch('src/scss/_rocket.scss', ['sass']);
 });
