@@ -9,5 +9,6 @@ gulp.task('sass', function () {
  
 gulp.task('sass:watch', function () {
   gulp.watch('src/scss/app.scss', ['sass']);
-  gulp.watch('src/scss/_main.scss', ['sass']);
+  gulp.watch('src/scss/_intro.scss', ['sass']);
+  gulp.watch('src/scss/_mission.scss', ['sass']);
 });

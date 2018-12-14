@@ -1,2 +1,9 @@
 @import "config";
-@import "main";
+@import "intro";
+@import "mission";
+
+.container{
+    display: flex;
+    flex-direction: column;
+    transition: transform 1s;
+}

@@ -35,10 +35,11 @@ body {
       filter: blur(5px); }
 
 .introduction {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   top: 0;
   left: 0;
   right: 0;
@@ -46,8 +47,8 @@ body {
   .introduction .sentence-container {
     position: relative;
     width: 1200px;
-    margin: 0 0 500px 0;
-    z-index: 1; }
+    z-index: 1;
+    transform: translateY(-300px); }
     .introduction .sentence-container .sentence {
       position: absolute;
       left: 50%;
@@ -69,6 +70,8 @@ body {
       .introduction .sentence-container .sentence.sentence-5 {
         animation-delay: 14s; }
       .introduction .sentence-container .sentence.sentence-6 {
+        animation-delay: 17.5s; }
+      .introduction .sentence-container .sentence.sentence-7 {
         animation-delay: 17.5s; }
     .introduction .sentence-container .animation {
       animation-name: opacity;
@@ -110,7 +113,7 @@ body {
       animation-play-state: paused;
       animation-duration: 2s;
       animation-fill-mode: both;
-      animation-timing-function: cubic-bezier(0, 0, 0.06, 1);
+      animation-timing-function: ease-in-out;
       animation-iteration-count: 1; }
     .introduction .hero .run {
       animation-play-state: running; }
@@ -130,3 +133,14 @@ body {
     opacity: 1; }
   100% {
     opacity: 0; } }
+
+.mission-container {
+  height: 100vh;
+  background-image: url(../images/bg-mission.png);
+  background-size: cover;
+  background-origin: center; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  transition: transform 1s; }

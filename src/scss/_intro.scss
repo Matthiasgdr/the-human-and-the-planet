@@ -2,6 +2,9 @@
 body{
     overflow: hidden;
 }
+
+// ECRAN DU BOUTON COMMENCER ET BOUTON COMMENCER
+
 .begin{
     position: absolute;
     display: flex;
@@ -37,11 +40,15 @@ body{
         }
     }
 }
+
+// PHRASES PUIS IMAGES DE L'INTRO
+
 .introduction{
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     top:0;
     left:0;
     right:0;
@@ -49,8 +56,8 @@ body{
     .sentence-container{
         position: relative;
         width: 1200px;
-        margin: 0 0 500px 0;
         z-index: 1;
+        transform: translateY(-300px);
         .sentence{
             position: absolute;
             left: 50%;
@@ -67,6 +74,7 @@ body{
             &.sentence-4{animation-delay: 10.5s}
             &.sentence-5{animation-delay: 14s}
             &.sentence-6{animation-delay: 17.5s}
+            &.sentence-7{animation-delay: 17.5s;   }
            
         }
         .animation{
@@ -96,7 +104,6 @@ body{
             &.picture-4{
                 background-image:url(../images/4.png);
                 animation-delay: 0.5s;
-
             }
             &.picture-3{
                 background-image:url(../images/3.png);
@@ -122,7 +129,7 @@ body{
             animation-play-state: paused;
             animation-duration: 2s;
             animation-fill-mode: both;
-            animation-timing-function: ease-in-out);
+            animation-timing-function: ease-in-out;
             animation-iteration-count: 1;
         }
         .run{
@@ -130,6 +137,9 @@ body{
         }
     }
 }
+
+// ANIMATION DES IMAGES DE L'INTRO (PAS DU CHANGEMENT DE TERRAIN)
+
 @keyframes translate{
     0%{
         transform:translateY(200px);
@@ -138,6 +148,9 @@ body{
         transform:translateY(0px);
     }
 }
+
+// ANIMATION DES PHRASES D'INTRO
+
 @keyframes opacity{
     0%{
         opacity: 0;
