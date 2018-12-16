@@ -51,6 +51,7 @@ function changeField(index){
     }, 600)
 }
 
+// FAIRE MONTER LE CONTAINER POUR CHANGER LA SCENE
 
 introductionSentences[4].addEventListener('click', changeScene)
 
@@ -58,6 +59,15 @@ function changeScene(){
     let scroll = 100
     $container.style.transform = `translateY(-${scroll}vh)`
 }
+
+// DECOLLAGE DE LA FUSEE
+
+const takeUp = document.querySelector('.take-up')
+const rocket = document.querySelector('.rocket-description')
+
+takeUp.addEventListener('click', () => {
+    rocket.classList.add('goToSpace')
+})
 
 function loop(){
     requestAnimationFrame(loop)
