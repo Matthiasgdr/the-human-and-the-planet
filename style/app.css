@@ -44,6 +44,30 @@ body {
   left: 0;
   right: 0;
   bottom: 0; }
+  .introduction .buttonGoToMission {
+    position: absolute;
+    z-index: 5;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: "Bitter", serif;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    will-change: transform;
+    padding: 15px; }
+    .introduction .buttonGoToMission:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform-origin: center; }
+    .introduction .buttonGoToMission.clicked {
+      padding: 50px;
+      opacity: 0;
+      filter: blur(5px); }
   .introduction .sentence-container {
     position: relative;
     width: 1200px;
@@ -172,6 +196,30 @@ body {
         font-size: 56px; }
       .second-screen .mission-container .mission p {
         font-size: 32px; }
+  .second-screen .buttonGoToRocket {
+    position: absolute;
+    z-index: 100;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: "Bitter", serif;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    will-change: transform;
+    padding: 15px; }
+    .second-screen .buttonGoToRocket:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform-origin: center; }
+    .second-screen .buttonGoToRocket.clicked {
+      padding: 50px;
+      opacity: 0;
+      filter: blur(5px); }
 
 .rocket-container {
   position: relative;
@@ -184,6 +232,7 @@ body {
     height: 100%; }
   .rocket-container .rocket-description {
     position: absolute;
+    z-index: 3;
     display: flex;
     justify-content: center;
     bottom: 80px;
@@ -247,12 +296,27 @@ body {
       font-size: 20px; }
   .rocket-container .take-up {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
+    top: 65%;
+    left: 22%;
     transform: translateX(-50%);
     color: white;
-    font-size: 26px;
-    cursor: pointer; }
+    border: 1px solid white;
+    border-radius: 50px;
+    font-size: 30px;
+    font-family: "Bitter", serif;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    will-change: transform;
+    padding: 20px; }
+    .rocket-container .take-up:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform-origin: center; }
+    .rocket-container .take-up.clicked {
+      padding: 50px;
+      opacity: 0;
+      filter: blur(5px); }
   .rocket-container .goToSpace {
     animation-name: takeUp;
     animation-duration: 5s;

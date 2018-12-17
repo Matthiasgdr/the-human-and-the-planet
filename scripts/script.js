@@ -3,6 +3,8 @@ const $container = document.querySelector('.container')
 const beginButton = begin.querySelector('.begin-button')
 const introductionSentences = document.querySelectorAll('.sentence')
 const introductionPictures = document.querySelectorAll('.picture')
+const buttonGoToMission = document.querySelector('.buttonGoToMission')
+const buttonGoToRocket = document.querySelector('.buttonGoToRocket')
 let scroll = 0
 
 const takeUp = document.querySelector('.take-up')
@@ -21,6 +23,11 @@ beginButton.addEventListener('click', () => {
     setTimeout(parralax, 300)
     setTimeout(intro, 4200)
 })
+
+buttonGoToMission.addEventListener('click', () => {
+   buttonGoToMission.classList.add('clicked')
+})
+
 
 // CACHER BOUTON COMMENCER PUIS AJOUT CLASS RUN POUR L'ANIMATION DU PARALLAX
 
@@ -43,6 +50,7 @@ function intro(){
     setTimeout(() => {changeField(3)}, 7000)
     setTimeout(() => {changeField(4)}, 10500)
     setTimeout(() => {changeField(5)}, 14000)
+    setTimeout(() => {buttonGoToMission.classList.remove('no-display')}, 20000)
 }
 
 // CHANGEMENT DE TERRAIN
@@ -63,8 +71,13 @@ function changeField(index){
 
 // FAIRE MONTER LE CONTAINER POUR CHANGER LA SCENE
 
-introductionSentences[4].addEventListener('click', goDownScene)
-mission.addEventListener('click', goDownScene)
+buttonGoToMission.addEventListener('click', goDownScene)
+buttonGoToRocket.addEventListener('click', goDownScene)
+
+buttonGoToRocket.addEventListener('click', () => {
+    buttonGoToRocket.classList.add('clicked')
+ })
+
 
 function goUpScene(){
     scroll -= 100
@@ -86,7 +99,7 @@ takeUp.addEventListener('click', () => {
     mission.classList.add('no-display')
     setTimeout(() => {goUpScene()}, 2000)
     if(randomizer == 1 ? rocket.classList.add('failToSpace') : rocket.classList.add('goToSpace'))
-    console.log(space);
+    description.style.display = "none"
     
 })
 

@@ -4,6 +4,7 @@
   "description": "This is a page regrouping different type of buttons you can use.",
   "main": "gulpfile.js",
   "scripts": {
+    "watchsass": "gulp sass:watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +18,9 @@
   },
   "homepage": "https://github.com/Matthiasgdr/Boutons#readme",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "global": "^4.3.2",
+    "gulp": "^3.9.1",
+    "node-sass": "^4.11.0"
   },
   "devDependencies": {
     "gulp-sass": "^4.0.2"

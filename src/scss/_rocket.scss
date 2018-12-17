@@ -10,6 +10,7 @@
      }
      .rocket-description{
          position: absolute;
+         z-index: 3;
          display: flex;
          justify-content: center;
          bottom:80px;
@@ -67,12 +68,30 @@
      }
      .take-up{
         position: absolute;
-        bottom: 20px;
-        left: 50%;
+        top: 65%;
+        left: 22%;
         transform: translateX(-50%);
-        color: white;
-        font-size: 26px;
+        color: $color;
+        border: 1px solid $color;
+        border-radius: 50px;
+        font-size: 30px;
+        font-family: $font;
         cursor: pointer;
+        user-select: none;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        will-change: transform;
+        padding : 20px;
+        &:hover{
+            background: rgba(255,255,255, 0.1);
+            transform-origin: center;
+        }
+        &.clicked{
+            padding: 50px;
+            opacity: 0;
+            filter: blur(5px);
+        }
+
      }
      .goToSpace{
          animation-name: takeUp;
