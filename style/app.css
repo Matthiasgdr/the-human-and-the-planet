@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Bitter|Playfair+Display");
 body {
-  overflow: hidden; }
+  overflow: visible; }
 
 .begin {
   position: absolute;
@@ -274,17 +274,17 @@ body {
     top: 0;
     max-width: 1000px;
     display: flex;
-    background: rgba(255, 255, 255, 0.3);
-    border: 2px solid white;
+    background: #24242471;
+    border: 1px solid white;
     border-radius: 10px;
     margin: 10px; }
     .rocket-container .capitaine-dialog .capitaine {
       width: 150px;
       height: 150px;
-      border: 2px solid white;
+      border: 1px solid white;
       border-top-left-radius: 10px;
       border-bottom-right-radius: 10px;
-      margin: -2px 0 0 -2px; }
+      margin: -1px 0 0 -1px; }
     .rocket-container .capitaine-dialog .dialog {
       border-radius: 20px;
       line-height: 24px;
