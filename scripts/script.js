@@ -69,6 +69,50 @@ takeUp.addEventListener('click', () => {
     rocket.classList.add('goToSpace')
 })
 
+// DIALOGUE DU CAPITAINE
+
+const description = document.querySelectorAll('.description')
+const dialogueBulle = document.querySelector('.dialog')
+
+description[0].addEventListener('mouseover', () => {changeDialogue(0)})
+description[1].addEventListener('mouseover', () => {changeDialogue(1)})
+description[2].addEventListener('mouseover', () => {changeDialogue(2)})
+description[3].addEventListener('mouseover', () => {changeDialogue(3)})
+description[4].addEventListener('mouseover', () => {changeDialogue(4)})
+description[5].addEventListener('mouseover', () => {changeDialogue(5)})
+
+function changeDialogue(index){
+    switch (index) {
+        case index = 0:
+            dialogueBulle.textContent = "External tank in aluminium, it can resist extremely high tempertatures experienced during re-entry. It is the largest component of the shuttle. It contains two internal tank : one for the storage of liquid hydrogen, and the other for the storage of liquid oxygen. Both tanks provide the fuel to the main engines required to provide the thrust for the vehicle to achieve a safe orbit"
+            break;
+    
+        case index = 1:
+            dialogueBulle.textContent = "Parachutes to desselerate the speed after the shuttle’s disposal of the rockets"
+            break;
+    
+        case index = 2:
+            dialogueBulle.textContent = "Main engines help the rocket boosters for lift off and continue to operate after they are jettisoned to allow the shuttle to reach orbit."
+            break;
+    
+        case index = 3:
+            dialogueBulle.textContent = "Orbiter : It is the crew’s home and the heart and brains of the space shuttle. The Orbiter contains the pressurized crew compartment, the payload hardware and the three main engines mounted on its end."
+            break;
+    
+        case index = 4:
+            dialogueBulle.textContent = "Solid rocket boosters provide the thrust to lift the shuttle off thte ground for the initial ascent and are only ignited when the three main engines reach the required 104.5 % thrust level for launch. They are usually unloaded 2 minutes after the launch, after taking the shuttle at an altitude of about 45 kilometers "
+            break;
+    
+        case index = 5:
+            dialogueBulle.textContent = "Star trackers, satellites and equipment box. This Collects informations like chocs, temperatures and transmit them to stations on the ground "
+            break;
+    
+        default:
+            dialogueBulle.textContent = "Bonjour voyageur ! Passe la souris sur les différents ronds rouges si tu veux que je te donne des informations sur la fusée qui va nous emmener sur Mars !"
+            break;
+    }
+}
+
 function loop(){
     requestAnimationFrame(loop)
 }
