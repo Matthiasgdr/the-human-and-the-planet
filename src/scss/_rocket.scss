@@ -75,6 +75,38 @@
         cursor: pointer;
      }
      .goToSpace{
-         transform: translateX(-50%) scale(0.8) translateY(-200vh) scale(0.4) rotate(25deg) translateX(400px);
+         animation-name: takeUp;
+         animation-duration: 5s;
+         animation-fill-mode: both;
+         animation-timing-function: ease-out;
    }
+     .failToSpace{
+         animation-name: takeUpfailed;
+         animation-duration: 10s;
+         animation-fill-mode: both;
+         animation-timing-function: ease-out;
+   }
+}
+
+@keyframes takeUp {
+    0%{
+        transform: translateX(-50%) scale(0.65);
+    }
+    100%{
+        transform: translateX(-50%) scale(0.50) translateY(-250vh) rotate(50deg);
+
+    }
+}
+@keyframes takeUpfailed {
+    0%{
+        transform: translateX(-50%) scale(0.65);
+    }
+    50%{
+        transform: translateX(-50%) scale(0.50) translateY(-250vh) rotate(50deg);
+
+    }
+    100%{
+        transform: translateX(300%) scale(0.50) translateY(-250vh) rotate(1000deg);
+
+    }
 }

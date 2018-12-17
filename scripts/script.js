@@ -3,6 +3,16 @@ const $container = document.querySelector('.container')
 const beginButton = begin.querySelector('.begin-button')
 const introductionSentences = document.querySelectorAll('.sentence')
 const introductionPictures = document.querySelectorAll('.picture')
+let scroll = 0
+
+const takeUp = document.querySelector('.take-up')
+const rocket = document.querySelector('.rocket-description')
+const space = document.querySelector('.space-container')
+const mission = document.querySelector('.mission-container')
+
+const description = document.querySelectorAll('.description')
+const dialogueBulle = document.querySelector('.dialog')
+
 
 // BOUTON COMMENCER
 
@@ -53,26 +63,34 @@ function changeField(index){
 
 // FAIRE MONTER LE CONTAINER POUR CHANGER LA SCENE
 
-introductionSentences[4].addEventListener('click', changeScene)
+introductionSentences[4].addEventListener('click', goDownScene)
+mission.addEventListener('click', goDownScene)
 
-function changeScene(){
-    let scroll = 100
+function goUpScene(){
+    scroll -= 100
     $container.style.transform = `translateY(-${scroll}vh)`
+    console.log('hello');
+    
+}
+function goDownScene(){
+    scroll += 100
+    $container.style.transform = `translateY(-${scroll}vh)`
+    console.log('otoo');
 }
 
 // DECOLLAGE DE LA FUSEE
 
-const takeUp = document.querySelector('.take-up')
-const rocket = document.querySelector('.rocket-description')
-
 takeUp.addEventListener('click', () => {
-    rocket.classList.add('goToSpace')
+    let randomizer = Math.round(Math.random())
+    space.classList.remove('no-display')
+    mission.classList.add('no-display')
+    setTimeout(() => {goUpScene()}, 2000)
+    if(randomizer == 1 ? rocket.classList.add('failToSpace') : rocket.classList.add('goToSpace'))
+    console.log(space);
+    
 })
 
 // DIALOGUE DU CAPITAINE
-
-const description = document.querySelectorAll('.description')
-const dialogueBulle = document.querySelector('.dialog')
 
 description[0].addEventListener('mouseover', () => {changeDialogue(0)})
 description[1].addEventListener('mouseover', () => {changeDialogue(1)})

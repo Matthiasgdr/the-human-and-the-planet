@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Bitter|Playfair+Display");
 body {
-  overflow: visible; }
+  overflow: hidden; }
 
 .begin {
   position: absolute;
@@ -134,26 +134,44 @@ body {
   100% {
     opacity: 0; } }
 
-.mission-container {
+.second-screen {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh; }
-  .mission-container .bg-mission {
+  .second-screen .space-container {
     position: absolute;
-    top: 0;
     left: 0;
-    width: 100%;
-    height: 100%; }
-  .mission-container .mission {
-    color: white;
-    z-index: 3;
-    font-family: "Bitter", serif; }
-    .mission-container .mission h1 {
-      font-size: 56px; }
-    .mission-container .mission p {
-      font-size: 32px; }
+    top: 0;
+    right: 0;
+    bottom: 0; }
+    .second-screen .space-container .bg-space {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+  .second-screen .mission-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .second-screen .mission-container .bg-mission {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    .second-screen .mission-container .mission {
+      color: white;
+      font-family: "Bitter", serif;
+      z-index: 1; }
+      .second-screen .mission-container .mission h1 {
+        font-size: 56px; }
+      .second-screen .mission-container .mission p {
+        font-size: 32px; }
 
 .rocket-container {
   position: relative;
@@ -236,10 +254,37 @@ body {
     font-size: 26px;
     cursor: pointer; }
   .rocket-container .goToSpace {
-    transform: translateX(-50%) scale(0.8) translateY(-200vh) scale(0.4) rotate(25deg) translateX(400px); }
+    animation-name: takeUp;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out; }
+  .rocket-container .failToSpace {
+    animation-name: takeUpfailed;
+    animation-duration: 10s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out; }
+
+@keyframes takeUp {
+  0% {
+    transform: translateX(-50%) scale(0.65); }
+  100% {
+    transform: translateX(-50%) scale(0.5) translateY(-250vh) rotate(50deg); } }
+
+@keyframes takeUpfailed {
+  0% {
+    transform: translateX(-50%) scale(0.65); }
+  50% {
+    transform: translateX(-50%) scale(0.5) translateY(-250vh) rotate(50deg); }
+  100% {
+    transform: translateX(300%) scale(0.5) translateY(-250vh) rotate(1000deg); } }
 
 .container {
   display: flex;
   flex-direction: column;
-  transition: transform 1s;
-  user-select: none; }
+  transition: transform 1s; }
+
+.no-display {
+  display: none !important; }
+
+.displayed {
+  display: block; }

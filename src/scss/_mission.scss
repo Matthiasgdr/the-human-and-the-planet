@@ -1,25 +1,46 @@
-.mission-container{
+.second-screen{
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    .bg-mission{
+    .space-container{
         position: absolute;
-        top:0;
-        left:0;
-        width: 100%;
-        height:100%;
-    }
-    .mission{
-        color: white;
-        z-index: 3;
-        font-family: $font;
-        h1{
-            font-size: 56px;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        .bg-space{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height:100%;
         }
-        p{
-            font-size: 32px;
+    }
+    .mission-container{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .bg-mission{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height:100%;
+        }
+        .mission{
+            color: white;
+            font-family: $font;
+            z-index: 1;
+            h1{
+                font-size: 56px;
+            }
+            p{
+                font-size: 32px;
+            }
         }
     }
 }
