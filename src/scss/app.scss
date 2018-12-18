@@ -2,6 +2,7 @@
 @import "intro";
 @import "mission";
 @import "rocket";
+@import "space";
 
 .container{
     display: flex;
@@ -10,7 +11,7 @@
 }
 
 body{
-    overflow: hidden;
+    overflow: visible;
 }
 
 .no-display{

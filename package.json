@@ -1,28 +1,24 @@
 {
-  "name": "boutons",
+  "name": "thehumananndtheplanet",
   "version": "1.0.0",
-  "description": "This is a page regrouping different type of buttons you can use.",
+  "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "watchsass": "gulp sass:watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Matthiasgdr/Boutons.git"
+    "url": "git+https://github.com/Matthiasgdr/the-human-and-the-planet.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Matthiasgdr/Boutons/issues"
+    "url": "https://github.com/Matthiasgdr/the-human-and-the-planet/issues"
   },
-  "homepage": "https://github.com/Matthiasgdr/Boutons#readme",
-  "dependencies": {
-    "global": "^4.3.2",
-    "gulp": "^3.9.1",
-    "node-sass": "^4.11.0"
-  },
+  "homepage": "https://github.com/Matthiasgdr/the-human-and-the-planet#readme",
   "devDependencies": {
-    "gulp-sass": "^4.0.2"
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.11.0"
   }
 }

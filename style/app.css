@@ -144,7 +144,6 @@
     transform: translateY(200px); }
   100% {
     transform: translateY(0px); } }
-
 @keyframes opacity {
   0% {
     opacity: 0; }
@@ -154,7 +153,6 @@
     opacity: 1; }
   100% {
     opacity: 0; } }
-
 .second-screen {
   position: relative;
   height: 100vh; }
@@ -264,7 +262,6 @@
     transform: translateX(-50%) translateY(-20px); }
   100% {
     transform: translateX(-50%) translateY(0px); } }
-
 .rocket-container {
   position: relative;
   height: 100vh; }
@@ -377,7 +374,6 @@
     transform: translateX(-50%) scale(0.65); }
   100% {
     transform: translateX(-50%) scale(0.5) translateY(-250vh) rotate(50deg); } }
-
 @keyframes takeUpfailed {
   0% {
     transform: translateX(-50%) scale(0.65); }
@@ -385,17 +381,90 @@
     transform: translateX(-50%) scale(0.5) translateY(-250vh) rotate(50deg); }
   100% {
     transform: translateX(300%) scale(0.5) translateY(-250vh) rotate(1000deg); } }
+.space-asteroide-container {
+  position: relative;
+  height: 100vh; }
+  .space-asteroide-container .bg-space {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .space-asteroide-container .rocket-in-space {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: rotate(60deg); }
+    .space-asteroide-container .rocket-in-space .rocketimg {
+      width: 200px;
+      height: 300px; }
+  .space-asteroide-container .asteroides {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 500px;
+    height: 600px; }
+    .space-asteroide-container .asteroides .asteroide {
+      width: 150px;
+      height: 100px; }
+    .space-asteroide-container .asteroides .asteroide-1 {
+      position: absolute;
+      top: 0;
+      left: 300px; }
+    .space-asteroide-container .asteroides .asteroide-2 {
+      position: absolute;
+      top: 100px;
+      left: 80px; }
+    .space-asteroide-container .asteroides .asteroide-3 {
+      position: absolute;
+      top: 250px;
+      left: 100px; }
+    .space-asteroide-container .asteroides .asteroide-4 {
+      position: absolute;
+      top: -50px;
+      left: -50px; }
+    .space-asteroide-container .asteroides .asteroide-5 {
+      position: absolute;
+      top: 300px;
+      left: 300px; }
+  .space-asteroide-container .animation-rocket {
+    animation: travel-rocket 10s;
+    animation-fill-mode: both; }
+  .space-asteroide-container .animation-aste {
+    animation: travel-aste 15s;
+    animation-fill-mode: both; }
+  .space-asteroide-container .animation-rocket-fail {
+    animation: travel-rocket-fail 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: both; }
 
+@keyframes travel-rocket {
+  0% {
+    transform: rotate(60deg); }
+  100% {
+    transform: translateX(100vw) translateY(-100vh) rotate(60deg); } }
+@keyframes travel-aste {
+  100% {
+    transform: translateX(-100vw) translateY(100vh) rotate(20deg); } }
+@keyframes travel-rocket-fail {
+  0% {
+    transform: rotate(60deg); }
+  80% {
+    transform: translateX(30vw) translateY(-30vh) rotate(60deg); }
+  100% {
+    transform: translateX(40vw) translateY(-40vh) rotate(75deg); } }
 .container {
   display: flex;
   flex-direction: column;
   transition: transform 1s; }
 
 body {
-  overflow: hidden; }
+  overflow: visible; }
 
 .no-display {
   display: none !important; }
 
 .displayed {
   display: block; }
+
+/*# sourceMappingURL=app.css.map */
