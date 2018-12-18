@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Bitter|Playfair+Display");
-body {
-  overflow: visible; }
-
 .begin {
   position: absolute;
   display: flex;
@@ -220,6 +217,53 @@ body {
       padding: 50px;
       opacity: 0;
       filter: blur(5px); }
+  .second-screen .hublots {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+    width: 100%;
+    height: 300vh; }
+    .second-screen .hublots .hublot {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh; }
+      .second-screen .hublots .hublot .hublot-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+      .second-screen .hublots .hublot .goDown {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 1px solid black;
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        animation: jump 1s infinite;
+        animation-delay: 0.5; }
+        .second-screen .hublots .hublot .goDown .arrow {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -40%) rotate(45deg);
+          border-right: 1px solid black;
+          border-bottom: 1px solid black;
+          width: 20px;
+          height: 20px; }
+
+@keyframes jump {
+  0% {
+    transform: translateX(-50%) translateY(0px); }
+  50% {
+    transform: translateX(-50%) translateY(-20px); }
+  100% {
+    transform: translateX(-50%) translateY(0px); } }
 
 .rocket-container {
   position: relative;
@@ -346,6 +390,9 @@ body {
   display: flex;
   flex-direction: column;
   transition: transform 1s; }
+
+body {
+  overflow: hidden; }
 
 .no-display {
   display: none !important; }

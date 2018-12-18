@@ -9,6 +9,10 @@
     transition: transform 1s;
 }
 
+body{
+    overflow: hidden;
+}
+
 .no-display{
     display: none !important;
 }
