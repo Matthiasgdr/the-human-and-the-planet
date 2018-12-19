@@ -222,7 +222,7 @@
   color: white; }
 
 .quiz h2 {
-  margin: 40px 0;
+  margin: 20px 0;
   font-size: 50px; }
 
 .quiz .choice {
@@ -249,7 +249,7 @@
   animation-iteration-count: infinite; }
 
 .quiz h3 {
-  margin: 100px 0 0 0;
+  margin: 180px 0 0 0;
   font-size: 30px;
   width: 65%;
   text-align: center; }
@@ -587,7 +587,7 @@
       left: 100px; }
     .space-asteroide-container .asteroides .asteroide-4 {
       position: absolute;
-      top: -50px;
+      top: 0px;
       left: -50px; }
     .space-asteroide-container .asteroides .asteroide-5 {
       position: absolute;
@@ -707,6 +707,25 @@
       .space-asteroide-container .warehouse-container .getFood:hover {
         background: rgba(255, 255, 255, 0.1);
         transform-origin: center; }
+    .space-asteroide-container .warehouse-container .goToCockpit {
+      position: absolute;
+      bottom: 10%;
+      left: 55%;
+      transform: translateX(-50%);
+      color: white;
+      border: 1px solid white;
+      border-radius: 50px;
+      font-size: 20px;
+      font-family: "Economica", serif;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      will-change: transform;
+      padding: 15px; }
+      .space-asteroide-container .warehouse-container .goToCockpit:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform-origin: center; }
 
 @keyframes travel-rocket {
   0% {
@@ -816,6 +835,12 @@
     .cockpit-container .mars-container .land {
       animation: land 5s;
       animation-fill-mode: both; }
+    .cockpit-container .mars-container .disclaimer {
+      position: absolute;
+      bottom: 2px;
+      left: 10px;
+      color: white;
+      font-size: 18px; }
 
 @keyframes land {
   0% {
@@ -830,7 +855,7 @@
   letter-spacing: 2px; }
 
 body {
-  overflow: visible; }
+  overflow: hidden; }
 
 .no-display {
   display: none !important; }

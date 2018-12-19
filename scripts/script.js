@@ -31,6 +31,7 @@ const goToWarehouse = $container.querySelector('.goToWarehouse')
 const warehouse = $container.querySelector('.warehouse-container')
 const $getFood = $container.querySelector('.getFood')
 const capitaineDialogInWarehouse = $container.querySelector('.dialog-at-warehouse')
+const goToCockpit = $container.querySelector('.goToCockpit')
 const restartWarehouse = document.querySelector('.js-restart')
 
 const buttonGoToLanding = $container.querySelector('.buttonGoToLanding')
@@ -74,7 +75,7 @@ const restartQuiz = document.querySelector('.conatiner>.restart')
 const buttonGoToExplanation = document.querySelector('.buttonGoToExplanation')
 let question = [ //Possibilité d'ajouter des questions
     [
-    "Have you less than 45 years ?",
+    "Are you under 45 years ?",
     "Yes",
     "No",
     "True"
@@ -86,7 +87,7 @@ let question = [ //Possibilité d'ajouter des questions
     "False"
     ],
     [
-    "Can you have a child ?",
+    "Are you able to have a child ?",
     "Yes",
     "No",
     "True"
@@ -136,17 +137,17 @@ const result = () => { // Message de réponse
     $choice.remove()
     if (go - stay > 0) {
         elementQuestion.innerHTML = "Welcome on board!"
-        elementQuestion.style.marginTop = '25px'
-        buttonGoToExplanation.classList.remove('no-display')
+        elementQuestion.style.transform = 'translateY(90px)'
+        buttonGoToExplanation.classList.remove('no-display')        
     }
     else if (go - stay <= -nb) {
         elementQuestion.innerHTML = "You stay on earth"
-        elementQuestion.style.marginTop = '25px'
+        elementQuestion.style.transform = 'translateY(90px)'
         restartQuiz.classList.remove('no-display')
     }
     else {
         elementQuestion.innerHTML = "Error in your favour, you still come to the adventure"
-        elementQuestion.style.marginTop = '10px'
+        elementQuestion.style.transform = 'translateY(90px)'
         buttonGoToExplanation.classList.remove('no-display')
     }
 }
@@ -322,8 +323,9 @@ goToWarehouse.addEventListener('click', () => {
 $getFood.addEventListener('click', getFood)
 
 function getFood(){
-    if (go == nb) {
+    if (go == 6) {
         capitaineDialogInWarehouse.innerHTML = "You do not have any medical problems and you are young enough to be useful once on Mars, you are allowed to go get a ration of food every day. Don't feel bad about it, it's unfair, but it's the only way to get some of the passengers to Mars alive. I really wish I had other solutions."
+        goToCockpit.classList.remove('no-display')
     }
     else{
         capitaineDialogInWarehouse.innerHTML = "I'm sorry, but you've been identified as disabled, sterile or too old, you can't receive food, that's the procedure and it's the only way to get at least some of the rocket's passengers to Mars alive. I'm sorry, it's not my decision."
@@ -332,12 +334,14 @@ function getFood(){
     $getFood.classList.add('clicked')
 }
 
+goToCockpit.addEventListener('click', goDownScene)
+
 // ALLER A L'ARRIVE SUR MARS
 
 buttonGoToLanding.addEventListener('click', () => {
     mars.classList.remove('no-display')
     rocketOnMars.classList.add('land')
-    setTimeout(() => {congrats.classList.add('opacity')}, 7000)
+    setTimeout(() => {congrats.classList.add('opacity')}, 5500)
 })
 
 function loop(){

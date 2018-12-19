@@ -46,7 +46,7 @@
         }
         .asteroide-4{
             position: absolute;
-            top: -50px;
+            top: 0px;
             left: -50px; 
         }
         .asteroide-5{
@@ -163,6 +163,27 @@
             }
         }
         .getFood{
+            position: absolute;
+            bottom: 10%;
+            left: 55%;
+            transform: translateX(-50%);
+            color: $color;
+            border: 1px solid $color;
+            border-radius: 50px;
+            font-size: 20px;
+            font-family: $font;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            will-change: transform;
+            padding : 15px;
+            &:hover{
+                background: rgba(255,255,255, 0.1);
+                transform-origin: center;
+            }
+        }
+        .goToCockpit{
             position: absolute;
             bottom: 10%;
             left: 55%;

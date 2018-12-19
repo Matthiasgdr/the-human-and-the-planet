@@ -103,6 +103,13 @@
             animation: land 5s;
             animation-fill-mode: both;
         }
+        .disclaimer{
+            position: absolute;
+            bottom: 2px;
+            left:10px;
+            color: white;
+            font-size: 18px;
+        }
     }
 }
 @keyframes land{
