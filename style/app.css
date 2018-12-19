@@ -892,7 +892,8 @@ strong {
       font-size: 56px;
       font-family: "Economica", serif; }
     .failed-container .failed p {
-      font-size: 32px; }
+      font-size: 32px; 
+      font-family: "Economica", serif;}
     .failed-container .failed .restart {
       border: solid 1px white;
       border-radius: 50px;
