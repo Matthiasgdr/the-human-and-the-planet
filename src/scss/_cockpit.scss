@@ -1,0 +1,115 @@
+.cockpit-container{
+    position: relative;
+    height: 100vh;
+    .buttonGoToLanding{
+        position: absolute;
+        top: 14%;
+        left: 58%;
+        transform: translateX(-50%);
+        color: $color;
+        border: 1px solid $color;
+        border-radius: 50px;
+        font-size: 20px;
+        font-family: $font;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        will-change: transform;
+        padding : 15px;
+        &:hover{
+            background: rgba(255,255,255, 0.1);
+            transform-origin: center;
+        }
+    }
+    .bg-cockpit{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+    }
+    .capitaine-dialog{
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translateY(-50%) translateX(-50%);
+        max-width: 1000px;
+        display: flex;
+        background: #242424cb;
+        border: 1px solid white;
+        border-radius: 10px;
+        margin: 10px;
+        .capitaine{
+          width: 150px;
+          height: 150px;
+          border: 1px solid white;
+          border-top-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          margin: -1px 0 0 -1px;
+        }
+        .dialog-at-cockpit{
+            border-radius: 20px;
+            line-height: 24px;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            width: 600px;
+            font-family: $font;
+            font-size: 20px;
+            white-space: pre-line;
+        }
+    }
+    .mars-container{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        .bg-mars{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+        }
+        .rocket{
+            position: absolute;
+            bottom:100px;
+            left:50%;
+            transform: translateX(-50%) scale(0.60) translateY(-200vh);
+            transform-origin: bottom;
+            z-index: 1;
+        }
+        .congratulations{
+            position: absolute;
+            top:10%;
+            left:50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            color: white;
+            opacity: 0;
+            transition: opacity 1s;
+            font-family: $font;
+            text-align: center;
+            h3{
+                font-size: 56px;
+            }
+            p{
+                font-size: 32px;
+            }
+        }
+        .land{
+            animation: land 5s;
+            animation-fill-mode: both;
+        }
+    }
+}
+@keyframes land{
+    0%{
+        transform: translateX(-50%) scale(0.60) translateY(-200vh);
+    }
+    100%{
+        transform: translateX(-50%) scale(0.60) translateY(0vh);
+    }
+}

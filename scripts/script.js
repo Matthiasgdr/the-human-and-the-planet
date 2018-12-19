@@ -19,6 +19,7 @@ const description = $container.querySelectorAll('.description')
 const dialogueBulle = $container.querySelector('.dialog')
 
 const porthole = $container.querySelector('.hublots')
+const buttonGoToPortHole = $container.querySelector('.buttonGoToPortHole')
 const scrollPorthole = $container.querySelectorAll('.goDown')
 
 const rocketInSpace = $container.querySelector('.rocket-in-space')
@@ -31,6 +32,11 @@ const warehouse = $container.querySelector('.warehouse-container')
 const $getFood = $container.querySelector('.getFood')
 const capitaineDialogInWarehouse = $container.querySelector('.dialog-at-warehouse')
 
+const buttonGoToLanding = $container.querySelector('.buttonGoToLanding')
+const cockpit = $container.querySelector('.cockpit-container')
+const mars = $container.querySelector('.mars-container')
+const rocketOnMars = $container.querySelector('.mars-container>.rocket')
+const congrats = mars.querySelector('.congratulations')
 
 // BOUTON COMMENCER
 
@@ -54,53 +60,68 @@ restart.addEventListener('click',
 
 // QUESTIONNAIRE
 
+const $quizContainer = document.querySelector('.conatiner')
 const $quiz = document.querySelector('.quiz')
 const elementQuestion = $quiz.querySelector('.question')
 const $choice = $quiz.querySelector('.choice') 
 const good = $choice.querySelector('.choice-posi')
 const bad = $choice.querySelector('.choice-nega')
-
-let question = [ // Possibilité d'ajouter des questions
+const buttonGoToExplanation = document.querySelector('.buttonGoToExplanation')
+let question = [ //Possibilité d'ajouter des questions
     [
-    "Are you clostrophobic ?",
+    "Have you less than 45 years ?",
+    "Yes",
     "No",
-    "Yes"
+    "True"
     ],
     [
-    "Do you have a disability ?",
+    "Are you claustrophobic ?",
+    "No",
     "Yes",
-    "No"
+    "False"
     ],
     [
     "Can you have a child ?",
     "Yes",
-    "No"
+    "No",
+    "True"
+    ],
+    [
+    "Do you have a disability ?",
+    "No",
+    "Yes",
+    "False"
     ]
 ]
-
 let i = 0 , go = 0, stay = 0, nb = question.length
 
 $choice.addEventListener('click', () => {
     selection()
     i++
     if (i < nb) {
-        questionSelect()
+        setTimeout(questionSelect, 300)
     }
     if (i == nb) {
         result()
+        exit()
     }
 })
 
 const questionSelect = () => { // Apparition de la question
     elementQuestion.innerHTML = question[i][0]
+    if (question[i][3] == 'False') {
+        $choice.style.flexDirection = 'row-reverse'
+    }
+    else {
+        $choice.style.flexDirection = 'row'
+    }
     good.innerHTML = question[i][1]
-    bad.innerHTML = question[i][2]
+    bad.innerHTML = question[i][2] 
 }
 
 const selection = () => { // Selection de la réponse
     good.addEventListener('click', () => {
         go++
-        console.log(go);
     })
     bad.addEventListener('click', () => {
         stay++
@@ -109,8 +130,12 @@ const selection = () => { // Selection de la réponse
 
 const result = () => { // Message de réponse
     $choice.remove()
-    if (go - stay >= 0) {
+    if (go - stay > 0) {
         elementQuestion.innerHTML = "Welcome on board!"
+        elementQuestion.style.marginTop = '25px'
+    }
+    else if (go - stay <= -nb) {
+        elementQuestion.innerHTML = "You stay on earth"
         elementQuestion.style.marginTop = '25px'
     }
     else {
@@ -120,6 +145,11 @@ const result = () => { // Message de réponse
 }
 
 questionSelect()
+
+const exit = () => {
+    $quizContainer.classList.add("vanish")
+    setTimeout(function(){$quizContainer.remove()}, 4000)
+}
 
 // CACHER BOUTON COMMENCER PUIS AJOUT CLASS RUN POUR L'ANIMATION DU PARALLAX
 
@@ -250,10 +280,10 @@ function changeDialogue(index){
 // AFFICHAGE DES HUBLOTS
 
 
-rocket.addEventListener('click', () => {
+buttonGoToPortHole.addEventListener('click', () => {
     if (clickableRocket) {
         porthole.classList.remove('no-display')
-        console.log('yes !');
+        
         
     }
 })
@@ -283,6 +313,8 @@ goToWarehouse.addEventListener('click', () => {
     warehouse.classList.remove('no-display')
 })
 
+
+
 // EST-CE QUE IL PEUT AVOIR DE LA NOURRITURE ?
 
 $getFood.addEventListener('click', getFood)
@@ -296,6 +328,15 @@ function getFood(){
     }
     $getFood.classList.add('clicked')
 }
+
+
+// ALLER A L'ARRIVE SUR MARS
+
+buttonGoToLanding.addEventListener('click', () => {
+    mars.classList.remove('no-display')
+    rocketOnMars.classList.add('land')
+    setTimeout(() => {congrats.classList.add('opacity')}, 7000)
+})
 
 function loop(){
     requestAnimationFrame(loop)

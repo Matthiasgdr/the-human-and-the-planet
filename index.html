@@ -30,23 +30,27 @@
                 </div>
                 <div class="buttonGoToMission no-display">Click to see the mission</div>
             </div>
+            <div class="quiz-container">
+                <div class="quiz">
+                    <h2>Space Selection</h2>
+                    <div class="choice"> 
+                        <button class="choice-posi">Good</button>
+                        <button class="choice-nega">Bad</button>
+                    </div>
+                    <h3 class="question">Question</h3>
+                </div>
+                <div class="buttonGoToExplanation">Click to see explanation of the mission</div>      
+            </div>
             <div class="second-screen">
                 <div class="space-container no-display">
                     <img src="images/espace.png" class="bg-space">
+                    <div class="buttonGoToPortHole">See the inside of the rocket</div>
                 </div>
                 <div class="mission-container">
                     <img src="images/bg-mission.png" class="bg-mission">
                     <div class="mission">     
                         <h1>Mission</h1>
-                        <p>Your Mission is to prepare the take up to Mars in the best condition for all human.</p>  
-                        <div class="quiz">
-                                <h2>Space Selection</h2>
-                                <div class="choice">
-                                    <button class="choice-posi">Good</button>
-                                    <button class="choice-nega">Bad</button>
-                                </div>
-                                <h3 class="question">Question</h3>
-                            </div>                        
+                        <p>Your Mission is to prepare the take up to Mars in the best condition for all human.</p>                        
                         <div class="buttonGoToRocket">I'm ready to go!</div>
                     </div>
                 </div>
@@ -114,11 +118,11 @@
                     <div class="dialog">Oh crap, the rocket's been damaged, I think an asteroid hit the food depot, I hope it's not too bad, I'll go check the damage!</div>
                 </div>
                 <div class="goToWarehouse no-display">Go check the warehouse</div>
-                <div class="warehouse-container">
+                <div class="warehouse-container no-display">
                     <img src="images/warehouse.png" alt="" class="bg-warehouse">
                     <div class="capitaine-dialog">
                         <img src="images/capitaine.png" class="capitaine">
-                        <div class="dialog-at-warehouse">Dear passengers, the fact that the asteroid touched the food warehouse caused a problem: it caused the water reserves to flow into the dehydrated food and it is now unusable. Half of the food is lost.
+                        <div class="dialog-at-warehouse"> Dear passengers, due to the asteroid, there has been a leak and the compartment dedicated to dehydrated food has been infiltrated by humidity. As a result, half of the rations are unfit for consumption.                                 
                                 I'm sorry, sincerely sorry but that's the procedure: If you've been identified as sterile, with a disability, or too old, you cant eat.
                                 We have no choice, if we dont dont do that, everyone will die....
                                     
@@ -127,6 +131,29 @@
                     </div>
                     <div class="getFood">Can I get food ?</div>
                 </div>
+            </div>
+            <div class="cockpit-container">
+                <img src="images/bg-cockpit.png" class="bg-cockpit">
+                <div class="capitaine-dialog">
+                    <img src="images/capitaine.png" class="capitaine">
+                    <div class="dialog-at-cockpit">Finally I wonder what all this is for....
+                            Is this trip really possible without loss?
+                            Dozens of people will die so that others can arrive on Mars and start a new life...
+                            And there is always fatigue, depression, cancer risks, conflicts...
+                            and land....
+
+                            Well, we're finnally near Mars, lets start the landing...
+                    </div>
+                </div> 
+                <div class="buttonGoToLanding">Land on Mars</div>   
+                <div class="mars-container no-display">
+                    <img src="images/bg-mars.png" class="bg-mars">
+                    <img src="images/rocket.png" class="rocket">
+                    <div class="congratulations">
+                        <h3>Congratulations !</h3>
+                        <p>You finished the trip.</p>
+                    </div>
+                </div>       
             </div>
         </div>
         <script type="text/javascript" src="scripts/script.js"></script>

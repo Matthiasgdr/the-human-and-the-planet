@@ -1,13 +1,16 @@
 @import "config";
 @import "intro";
+@import "selection";
 @import "mission";
 @import "rocket";
 @import "space";
+@import "cockpit";
 
 .container{
     display: flex;
     flex-direction: column;
     transition: transform 1s;
+    user-select: none;
 }
 
 body{
@@ -16,6 +19,10 @@ body{
 
 .no-display{
     display: none !important;
+}
+
+.opacity{
+    opacity: 1 !important;
 }
 
 .displayed{

@@ -7,6 +7,27 @@
         top: 0;
         right: 0;
         bottom: 0;
+        .buttonGoToPortHole{
+            position: absolute;
+            top: 14%;
+            left: 40%;
+            transform: translateX(-50%);
+            color: $color;
+            border: 1px solid $color;
+            border-radius: 50px;
+            font-size: 20px;
+            font-family: $font;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            will-change: transform;
+            padding : 15px;
+            &:hover{
+                background: rgba(255,255,255, 0.1);
+                transform-origin: center;
+            }
+        }
         .bg-space{
             position: absolute;
             top:0;
@@ -54,6 +75,27 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            .buttonGoToExplanation{
+            position: absolute;
+            top: 14%;
+            left: 58%;
+            transform: translateX(-50%);
+            color: $color;
+            border: 1px solid $color;
+            border-radius: 50px;
+            font-size: 20px;
+            font-family: $font;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            will-change: transform;
+            padding : 15px;
+            &:hover{
+            background: rgba(255,255,255, 0.1);
+            transform-origin: center;
+        }
+            }
         }
         
         .quiz *{

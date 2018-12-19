@@ -155,6 +155,86 @@
     opacity: 1; }
   100% {
     opacity: 0; } }
+:root {
+  --scale-value: 1; }
+
+.quiz-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #153A4B;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.quiz-container.vanish {
+  transition-property: opacity;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 2s;
+  opacity: 0; }
+
+.quiz,
+.quiz * {
+  transform: scale(var(--scale-value)); }
+
+.quiz {
+  width: 600px;
+  height: 424px;
+  background: url(../images/quiz.svg) no-repeat;
+  background-size: cover;
+  background-position: top left;
+  top: calc(50% - 212px);
+  left: calc(50% - 300px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(1.5);
+  font-family: "Bitter", serif; }
+
+.quiz * {
+  color: white; }
+
+.quiz h2 {
+  margin: 50px 0;
+  font-size: 50px; }
+
+.quiz .choice {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 50%; }
+
+.quiz .choice button {
+  width: 70px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  background: url(../images/button.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  outline: none; }
+
+.quiz .choice button:hover {
+  animation-name: button;
+  animation-duration: 800ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; }
+
+.quiz h3 {
+  margin: 60px 0 0 0;
+  font-size: 30px;
+  width: 65%;
+  text-align: center; }
+
+@keyframes button {
+  0% {
+    transform: scale(var(--scale-value)); }
+  50% {
+    transform: scale(calc(var(--scale-value) - 0.05)); }
+  100% {
+    transform: scale(var(--scale-value)); } }
 .second-screen {
   position: relative;
   height: 100vh; }
@@ -164,6 +244,25 @@
     top: 0;
     right: 0;
     bottom: 0; }
+    .second-screen .space-container .buttonGoToPortHole {
+      position: absolute;
+      top: 14%;
+      left: 40%;
+      transform: translateX(-50%);
+      color: white;
+      border: 1px solid white;
+      border-radius: 50px;
+      font-size: 20px;
+      font-family: "Bitter", serif;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      will-change: transform;
+      padding: 15px; }
+      .second-screen .space-container .buttonGoToPortHole:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform-origin: center; }
     .second-screen .space-container .bg-space {
       position: absolute;
       top: 0;
@@ -205,6 +304,25 @@
       display: flex;
       flex-direction: column;
       align-items: center; }
+      .second-screen .mission-container .quiz .buttonGoToExplanation {
+        position: absolute;
+        top: 14%;
+        left: 58%;
+        transform: translateX(-50%);
+        color: white;
+        border: 1px solid white;
+        border-radius: 50px;
+        font-size: 20px;
+        font-family: "Bitter", serif;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        will-change: transform;
+        padding: 15px; }
+        .second-screen .mission-container .quiz .buttonGoToExplanation:hover {
+          background: rgba(255, 255, 255, 0.1);
+          transform-origin: center; }
     .second-screen .mission-container .quiz * {
       color: white; }
     .second-screen .mission-container .quiz h2 {
@@ -647,16 +765,119 @@
     transform: translateX(30vw) translateY(-30vh) rotate(60deg); }
   100% {
     transform: translateX(40vw) translateY(-40vh) rotate(75deg); } }
+.cockpit-container {
+  position: relative;
+  height: 100vh; }
+  .cockpit-container .buttonGoToLanding {
+    position: absolute;
+    top: 14%;
+    left: 58%;
+    transform: translateX(-50%);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: "Bitter", serif;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    will-change: transform;
+    padding: 15px; }
+    .cockpit-container .buttonGoToLanding:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform-origin: center; }
+  .cockpit-container .bg-cockpit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .cockpit-container .capitaine-dialog {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translateY(-50%) translateX(-50%);
+    max-width: 1000px;
+    display: flex;
+    background: #242424cb;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 10px; }
+    .cockpit-container .capitaine-dialog .capitaine {
+      width: 150px;
+      height: 150px;
+      border: 1px solid white;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      margin: -1px 0 0 -1px; }
+    .cockpit-container .capitaine-dialog .dialog-at-cockpit {
+      border-radius: 20px;
+      line-height: 24px;
+      color: white;
+      padding: 10px;
+      margin: 10px;
+      width: 600px;
+      font-family: "Bitter", serif;
+      font-size: 20px;
+      white-space: pre-line; }
+  .cockpit-container .mars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .cockpit-container .mars-container .bg-mars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    .cockpit-container .mars-container .rocket {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.6) translateY(-200vh);
+      transform-origin: bottom;
+      z-index: 1; }
+    .cockpit-container .mars-container .congratulations {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: white;
+      opacity: 0;
+      transition: opacity 1s;
+      font-family: "Bitter", serif;
+      text-align: center; }
+      .cockpit-container .mars-container .congratulations h3 {
+        font-size: 56px; }
+      .cockpit-container .mars-container .congratulations p {
+        font-size: 32px; }
+    .cockpit-container .mars-container .land {
+      animation: land 5s;
+      animation-fill-mode: both; }
+
+@keyframes land {
+  0% {
+    transform: translateX(-50%) scale(0.6) translateY(-200vh); }
+  100% {
+    transform: translateX(-50%) scale(0.6) translateY(0vh); } }
 .container {
   display: flex;
   flex-direction: column;
-  transition: transform 1s; }
+  transition: transform 1s;
+  user-select: none; }
 
 body {
   overflow: visible; }
 
 .no-display {
   display: none !important; }
+
+.opacity {
+  opacity: 1 !important; }
 
 .displayed {
   display: block; }
