@@ -49,9 +49,7 @@
     top:0;
     left:0;
     right:0;
-    bottom:0;
-
-                      
+    bottom:0;            
     .buttonGoToMission{
         position: absolute;
         z-index: 5;
@@ -93,6 +91,7 @@
             font-size: 38px;
             font-family: 'Bitter', serif;
             transform: translateX(-50%) translateY(-50%);
+            will-change: opacity;
             opacity: 0;
             &.sentence-1{animation-delay: 0s}
             &.sentence-2{animation-delay: 3.5s}
@@ -123,6 +122,7 @@
             background-size: cover;
             background-position: bottom;
             transition: transform 0.3s;
+            will-change: transform;
             &.picture-5{
                 background-image:url(../images/5.png);
                 animation-delay: 0s;

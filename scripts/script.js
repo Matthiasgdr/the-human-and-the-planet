@@ -1,23 +1,36 @@
-const begin = document.querySelector('.begin')
 const $container = document.querySelector('.container')
+const begin = $container.querySelector('.begin')
 const beginButton = begin.querySelector('.begin-button')
-const introductionSentences = document.querySelectorAll('.sentence')
-const introductionPictures = document.querySelectorAll('.picture')
-const buttonGoToMission = document.querySelector('.buttonGoToMission')
-const buttonGoToRocket = document.querySelector('.buttonGoToRocket')
+const restart = $container.querySelector('.restart')
+const introductionSentences = $container.querySelectorAll('.sentence')
+const introductionPictures = $container.querySelectorAll('.picture')
+const buttonGoToMission = $container.querySelector('.buttonGoToMission')
+const buttonGoToRocket = $container.querySelector('.buttonGoToRocket')
 let scroll = 0
 
-const takeUp = document.querySelector('.take-up')
-const rocket = document.querySelector('.rocket-description')
-const space = document.querySelector('.space-container')
-const mission = document.querySelector('.mission-container')
+const takeUp = $container.querySelector('.take-up')
+const rocket = $container.querySelector('.rocket-description')
+const space = $container.querySelector('.space-container')
+const mission = $container.querySelector('.mission-container')
+const missionFailed = $container.querySelector('.failed-container')
 let clickableRocket = false
 
-const description = document.querySelectorAll('.description')
-const dialogueBulle = document.querySelector('.dialog')
+const description = $container.querySelectorAll('.description')
+const dialogueBulle = $container.querySelector('.dialog')
 
-const porthole = document.querySelector('.hublots')
-const scrollPorthole = document.querySelectorAll('.goDown')
+const porthole = $container.querySelector('.hublots')
+const scrollPorthole = $container.querySelectorAll('.goDown')
+
+const rocketInSpace = $container.querySelector('.rocket-in-space')
+const asteroides = $container.querySelector('.asteroides')
+const goToAstero = $container.querySelector('.goToAstero')
+const capitaineDialog = $container.querySelector('.space-asteroide-container>.capitaine-dialog')
+const goToWarehouse = $container.querySelector('.goToWarehouse')
+
+const warehouse = $container.querySelector('.warehouse-container')
+const $getFood = $container.querySelector('.getFood')
+const capitaineDialogInWarehouse = $container.querySelector('.dialog-at-warehouse')
+
 
 // BOUTON COMMENCER
 
@@ -32,6 +45,81 @@ buttonGoToMission.addEventListener('click', () => {
    buttonGoToMission.classList.add('clicked')
 })
 
+// RESTART
+
+restart.addEventListener('click',
+() =>{
+  window.location.reload();
+})
+
+// QUESTIONNAIRE
+
+const $quiz = document.querySelector('.quiz')
+const elementQuestion = $quiz.querySelector('.question')
+const $choice = $quiz.querySelector('.choice') 
+const good = $choice.querySelector('.choice-posi')
+const bad = $choice.querySelector('.choice-nega')
+
+let question = [ // Possibilité d'ajouter des questions
+    [
+    "Are you clostrophobic ?",
+    "No",
+    "Yes"
+    ],
+    [
+    "Do you have a disability ?",
+    "Yes",
+    "No"
+    ],
+    [
+    "Can you have a child ?",
+    "Yes",
+    "No"
+    ]
+]
+
+let i = 0 , go = 0, stay = 0, nb = question.length
+
+$choice.addEventListener('click', () => {
+    selection()
+    i++
+    if (i < nb) {
+        questionSelect()
+    }
+    if (i == nb) {
+        result()
+    }
+})
+
+const questionSelect = () => { // Apparition de la question
+    elementQuestion.innerHTML = question[i][0]
+    good.innerHTML = question[i][1]
+    bad.innerHTML = question[i][2]
+}
+
+const selection = () => { // Selection de la réponse
+    good.addEventListener('click', () => {
+        go++
+        console.log(go);
+    })
+    bad.addEventListener('click', () => {
+        stay++
+    })
+}
+
+const result = () => { // Message de réponse
+    $choice.remove()
+    if (go - stay >= 0) {
+        elementQuestion.innerHTML = "Welcome on board!"
+        elementQuestion.style.marginTop = '25px'
+    }
+    else {
+        elementQuestion.innerHTML = "Error in your favour, you still come to the adventure"
+        elementQuestion.style.marginTop = '10px'
+    }
+}
+
+questionSelect()
 
 // CACHER BOUTON COMMENCER PUIS AJOUT CLASS RUN POUR L'ANIMATION DU PARALLAX
 
@@ -75,23 +163,22 @@ function changeField(index){
 // FAIRE MONTER LE CONTAINER POUR CHANGER LA SCENE
 
 buttonGoToMission.addEventListener('click', goDownScene)
-buttonGoToRocket.addEventListener('click', goDownScene)
+buttonGoToRocket.addEventListener('click', () => {
+    goDownScene()
+    buttonGoToRocket.classList.add('clicked')
+})
 
 buttonGoToRocket.addEventListener('click', () => {
-    buttonGoToRocket.classList.add('clicked')
  })
 
 
 function goUpScene(){
     scroll -= 100
-    $container.style.transform = `translateY(-${scroll}vh)`
-    console.log('hello');
-    
+    $container.style.transform = `translateY(-${scroll}vh)`    
 }
 function goDownScene(){
     scroll += 100
     $container.style.transform = `translateY(-${scroll}vh)`
-    console.log('otoo');
 }
 
 // DECOLLAGE DE LA FUSEE
@@ -100,10 +187,15 @@ takeUp.addEventListener('click', () => {
     let randomizer = Math.round(Math.random())
     space.classList.remove('no-display')
     mission.classList.add('no-display')
+    for (let i = 0; i < description.length; i++) {
+        const element = description[i];
+        element.classList.add('no-display')
+    }
     setTimeout(() => {
         goUpScene()}, 2000)
     if(randomizer == 1){
         failToSpace()
+        setTimeout(() => {missionFailed.classList.remove('no-display')}, 7000)
     }
     else{
         goToSpace()
@@ -166,11 +258,43 @@ rocket.addEventListener('click', () => {
     }
 })
 
-        // DEFILLEMENT DES HUBLOTS
+// DEFILLEMENT DES HUBLOTS
 
 for (let i = 0; i < scrollPorthole.length; i++) {
     const element = scrollPorthole[i];
     element.addEventListener('click', () => {goDownScene()})
+}
+
+// QUITTER LES HUBLOTS ET LANCER ANIMATION ASTEROIDES
+
+goToAstero.addEventListener('click', () => {
+    porthole.classList.add('no-display')
+    rocketInSpace.classList.add('animation-rocket-fail')
+    asteroides.classList.add('animation-aste')
+    setTimeout(() => {
+        capitaineDialog.classList.remove('no-display')
+        goToWarehouse.classList.remove('no-display')
+    }, 7000)
+})
+
+// ALLER A LA WAREHOUSE
+
+goToWarehouse.addEventListener('click', () => {
+    warehouse.classList.remove('no-display')
+})
+
+// EST-CE QUE IL PEUT AVOIR DE LA NOURRITURE ?
+
+$getFood.addEventListener('click', getFood)
+
+function getFood(){
+    if (go == nb) {
+        capitaineDialogInWarehouse.innerHTML = "You do not have any medical problems and you are young enough to be useful once on Mars, you are allowed to go get a ration of food every day. Don't feel bad about it, it's unfair, but it's the only way to get some of the passengers to Mars alive. I really wish I had other solutions."
+    }
+    else{
+        capitaineDialogInWarehouse.innerHTML = "I'm sorry, but you've been identified as disabled, sterile or too old, you can't receive food, that's the procedure and it's the only way to get at least some of the rocket's passengers to Mars alive. I'm sorry, it's not my decision."
+    }
+    $getFood.classList.add('clicked')
 }
 
 function loop(){

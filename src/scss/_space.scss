@@ -14,9 +14,8 @@
         bottom:0;
         transform: rotate(60deg);
        .rocketimg{
-           width: 200px;
+           width: 180px;
            height: 300px;
-
        }
     }
     .asteroides{
@@ -25,6 +24,7 @@
         top:0;
         width: 500px;
         height: 600px;
+        will-change: transform;
         .asteroide{
             width: 150px;
             height: 100px;
@@ -53,6 +53,7 @@
             position: absolute;
             top: 300px;
             left: 300px; 
+            transform: rotate(169deg);
         }
     }
     .animation-rocket{
@@ -67,6 +68,121 @@
         animation: travel-rocket-fail 5s;
         animation-timing-function: linear;
         animation-fill-mode: both;
+    }
+    .capitaine-dialog{
+        position: absolute;
+        left: 0;
+        top: 0;
+        max-width: 1000px;
+        display: flex;
+        background: #24242471;
+        border: 1px solid white;
+        border-radius: 10px;
+        margin: 10px;
+        .capitaine{
+          width: 150px;
+          height: 150px;
+          border: 1px solid white;
+          border-top-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          margin: -1px 0 0 -1px;
+        }
+        .dialog{
+            border-radius: 20px;
+            line-height: 24px;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            width: 600px;
+            font-family: $font;
+            font-size: 20px;
+        }
+    }
+    .goToWarehouse{
+        position: absolute;
+        bottom: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $color;
+        border: 1px solid $color;
+        border-radius: 50px;
+        font-size: 20px;
+        font-family: $font;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        will-change: transform;
+        padding : 15px;
+        &:hover{
+            background: rgba(255,255,255, 0.1);
+            transform-origin: center;
+        }
+    }
+    .warehouse-container{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height:100%;
+        .bg-warehouse{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+        }
+        .capitaine-dialog{
+            position: absolute;
+            left: 0;
+            top: 0;
+            max-width: 1000px;
+            display: flex;
+            background: #242424da;
+            border: 1px solid white;
+            border-radius: 10px;
+            margin: 10px;
+            .capitaine{
+              width: 150px;
+              height: 150px;
+              border: 1px solid white;
+              border-top-left-radius: 10px;
+              border-bottom-right-radius: 10px;
+              margin: -1px 0 0 -1px;
+            }
+            .dialog-at-warehouse{
+                border-radius: 20px;
+                line-height: 24px;
+                color: white;
+                padding: 10px;
+                margin: 10px;
+                width: 600px;
+                font-family: $font;
+                font-size: 20px;
+                white-space: pre-line;
+            }
+        }
+        .getFood{
+            position: absolute;
+            bottom: 10%;
+            left: 55%;
+            transform: translateX(-50%);
+            color: $color;
+            border: 1px solid $color;
+            border-radius: 50px;
+            font-size: 20px;
+            font-family: $font;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            will-change: transform;
+            padding : 15px;
+            &:hover{
+                background: rgba(255,255,255, 0.1);
+                transform-origin: center;
+            }
+        }
     }
 }
 

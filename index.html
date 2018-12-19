@@ -21,7 +21,6 @@
                     <div class="sentence sentence-5">Where forest represent only 5% of the surface...</div>
                     <div class="sentence sentence-6">Humanity need a new home.</div>                </div>
                 <div class="hero">
-
                     <div class="picture picture-0"></div>
                     <div class="picture picture-1 animation"></div>
                     <div class="picture picture-2 animation"></div>
@@ -40,6 +39,14 @@
                     <div class="mission">     
                         <h1>Mission</h1>
                         <p>Your Mission is to prepare the take up to Mars in the best condition for all human.</p>  
+                        <div class="quiz">
+                                <h2>Space Selection</h2>
+                                <div class="choice">
+                                    <button class="choice-posi">Good</button>
+                                    <button class="choice-nega">Bad</button>
+                                </div>
+                                <h3 class="question">Question</h3>
+                            </div>                        
                         <div class="buttonGoToRocket">I'm ready to go!</div>
                     </div>
                 </div>
@@ -58,8 +65,19 @@
                     </div>
                     <div class="hublot hublot-3">
                         <img class="hublot-img" src="images/hublot-3.png" alt="">
+                        <div class="goToAstero">
+                                Ready to continue the mission?
+                        </div>
                     </div>
                 </div>
+                <div class="failed-container no-display">
+                        <div class="failed">
+                            <h1>Mission failed</h1>
+                            <p>The rocket missed its takeoff, 80 people died, too bad...</p>
+                            <p>You will maybe have more chance if you try again.</p>
+                            <div class="restart">Restart</div>
+                        </div>
+                    </div>
            </div>
             <div class="rocket-container">
                 <img src="images/bg-rocket.png" class="bg-rocket">
@@ -74,24 +92,43 @@
                 </div>
                 <div class="capitaine-dialog">
                     <img src="images/capitaine.png" class="capitaine">
-                    <div class="dialog">Bonjour voyageur ! Passe la souris sur les différents ronds rouges si tu veux que je te donne des informations sur la fusée qui va nous emmener sur Mars !</div>
+                    <div class="dialog">Hello ladies and gentlemen and welcome aboard Exodus, the incredible shuttle that will lead you to your new life.  I am your Captain for this trip to Mars and will make sure that you all arrive safely on our new promised land.
+                            Put your mouse over the different red circles if you want me to give you information about the rocket that will take us to Mars!</div>
                 </div>
                 <div class="take-up">Launching the rocket!</div>
             </div>
             <div class="space-asteroide-container">
                 <img class="bg-space" src="images/espace.png">
-                <div class="rocket-in-space animation-rocket-fail">
+                <div class="rocket-in-space">
                     <img class="rocketimg" src="images/rocket.png">
                 </div>
-                <div class="asteroides animation-aste">
+                <div class="asteroides">
                     <img src="images/asteroide-1.png" class="asteroide asteroide-1">
                     <img src="images/asteroide-2.png" class="asteroide asteroide-2">
                     <img src="images/asteroide-3.png" class="asteroide asteroide-3">
                     <img src="images/asteroide-2.png" class="asteroide asteroide-4">
                     <img src="images/asteroide-1.png" class="asteroide asteroide-5">
                 </div>
+                <div class="capitaine-dialog no-display">
+                    <img src="images/capitaine.png" class="capitaine">
+                    <div class="dialog">Oh crap, the rocket's been damaged, I think an asteroid hit the food depot, I hope it's not too bad, I'll go check the damage!</div>
+                </div>
+                <div class="goToWarehouse no-display">Go check the warehouse</div>
+                <div class="warehouse-container">
+                    <img src="images/warehouse.png" alt="" class="bg-warehouse">
+                    <div class="capitaine-dialog">
+                        <img src="images/capitaine.png" class="capitaine">
+                        <div class="dialog-at-warehouse">Dear passengers, the fact that the asteroid touched the food warehouse caused a problem: it caused the water reserves to flow into the dehydrated food and it is now unusable. Half of the food is lost.
+                                I'm sorry, sincerely sorry but that's the procedure: If you've been identified as sterile, with a disability, or too old, you cant eat.
+                                We have no choice, if we dont dont do that, everyone will die....
+                                    
+                                I'm sorry.
+                        </div>
+                    </div>
+                    <div class="getFood">Can I get food ?</div>
+                </div>
             </div>
-    </div>
+        </div>
         <script type="text/javascript" src="scripts/script.js"></script>
     </body>
 </html>

@@ -21,3 +21,9 @@ body{
 .displayed{
     display: block;
 }
+
+.clicked{
+    padding: 50px;
+    opacity: 0;
+    filter: blur(5px);
+}

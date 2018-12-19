@@ -79,6 +79,7 @@
       font-size: 38px;
       font-family: 'Bitter', serif;
       transform: translateX(-50%) translateY(-50%);
+      will-change: opacity;
       opacity: 0; }
       .introduction .sentence-container .sentence.sentence-1 {
         animation-delay: 0s; }
@@ -111,7 +112,8 @@
       bottom: 0;
       background-size: cover;
       background-position: bottom;
-      transition: transform 0.3s; }
+      transition: transform 0.3s;
+      will-change: transform; }
       .introduction .hero .picture.picture-5 {
         background-image: url(../images/5.png);
         animation-delay: 0s; }
@@ -191,6 +193,49 @@
         font-size: 56px; }
       .second-screen .mission-container .mission p {
         font-size: 32px; }
+    .second-screen .mission-container .quiz {
+      position: absolute;
+      width: 600px;
+      height: 424px;
+      background: url(../images/quiz.svg) no-repeat;
+      background-size: cover;
+      background-position: top left;
+      top: calc(50% - 212px);
+      left: calc(50% - 300px);
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+    .second-screen .mission-container .quiz * {
+      color: white; }
+    .second-screen .mission-container .quiz h2 {
+      margin: 50px 0;
+      font-size: 50px; }
+    .second-screen .mission-container .quiz .choice {
+      margin: 40px 0;
+      display: flex;
+      justify-content: space-between;
+      width: 50%; }
+    .second-screen .mission-container .quiz .choice button {
+      width: 70px;
+      color: black;
+      font-size: 20px; }
+    .second-screen .mission-container .quiz .choice button:hover {
+      animation-name: button;
+      animation-duration: 800ms;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite; }
+    .second-screen .mission-container .quiz h3 {
+      margin: 60px 0 0 0;
+      font-size: 30px;
+      width: 65%;
+      text-align: center; }
+@keyframes button {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(0.8); }
+  100% {
+    transform: scale(1); } }
   .second-screen .buttonGoToRocket {
     position: absolute;
     z-index: 100;
@@ -244,16 +289,61 @@
         width: 50px;
         height: 50px;
         animation: jump 1s infinite;
-        animation-delay: 0.5; }
+        animation-delay: 0.5;
+        cursor: pointer; }
         .second-screen .hublots .hublot .goDown .arrow {
           position: absolute;
-          top: 50%;
+          top: 40%;
           left: 50%;
           transform: translate(-50%, -40%) rotate(45deg);
           border-right: 1px solid black;
           border-bottom: 1px solid black;
           width: 20px;
           height: 20px; }
+      .second-screen .hublots .hublot .goToAstero {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50px;
+        background-color: #A72D66;
+        color: white;
+        font-size: 20px;
+        font-family: "Bitter", serif;
+        padding: 20px;
+        cursor: pointer;
+        animation: jump 1s infinite;
+        animation-delay: 0.5; }
+  .second-screen .failed-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3; }
+    .second-screen .failed-container .failed {
+      text-align: center;
+      color: white; }
+      .second-screen .failed-container .failed h1 {
+        font-size: 56px;
+        font-family: "Bitter", serif; }
+      .second-screen .failed-container .failed p {
+        font-size: 32px; }
+      .second-screen .failed-container .failed .restart {
+        border: solid 1px white;
+        border-radius: 50px;
+        padding: 10px;
+        margin: 20px auto;
+        width: 300px;
+        font-size: 24px;
+        font-family: "Bitter", serif;
+        cursor: pointer;
+        transition: background 0.3s; }
+        .second-screen .failed-container .failed .restart:hover {
+          background: rgba(255, 255, 255, 0.253); }
 
 @keyframes jump {
   0% {
@@ -278,6 +368,7 @@
     justify-content: center;
     bottom: 80px;
     left: 50%;
+    will-change: transform;
     transform: translateX(-50%) scale(0.65);
     transform-origin: bottom;
     transition: all 5s;
@@ -288,6 +379,7 @@
       border-radius: 50px;
       width: 25px;
       height: 25px;
+      will-change: transform;
       transition: transform 0.3s; }
       .rocket-container .rocket-description .description:hover {
         transform: scale(1.1); }
@@ -328,13 +420,14 @@
       margin: -1px 0 0 -1px; }
     .rocket-container .capitaine-dialog .dialog {
       border-radius: 20px;
-      line-height: 24px;
+      line-height: 28px;
       color: white;
       padding: 10px;
       margin: 10px;
       width: 600px;
       font-family: "Bitter", serif;
-      font-size: 20px; }
+      font-size: 20px;
+      white-space: pre-line; }
   .rocket-container .take-up {
     position: absolute;
     top: 65%;
@@ -354,10 +447,6 @@
     .rocket-container .take-up:hover {
       background: rgba(255, 255, 255, 0.1);
       transform-origin: center; }
-    .rocket-container .take-up.clicked {
-      padding: 50px;
-      opacity: 0;
-      filter: blur(5px); }
   .rocket-container .goToSpace {
     animation-name: takeUp;
     animation-duration: 5s;
@@ -396,14 +485,15 @@
     bottom: 0;
     transform: rotate(60deg); }
     .space-asteroide-container .rocket-in-space .rocketimg {
-      width: 200px;
+      width: 180px;
       height: 300px; }
   .space-asteroide-container .asteroides {
     position: absolute;
     right: 0;
     top: 0;
     width: 500px;
-    height: 600px; }
+    height: 600px;
+    will-change: transform; }
     .space-asteroide-container .asteroides .asteroide {
       width: 150px;
       height: 100px; }
@@ -426,7 +516,8 @@
     .space-asteroide-container .asteroides .asteroide-5 {
       position: absolute;
       top: 300px;
-      left: 300px; }
+      left: 300px;
+      transform: rotate(169deg); }
   .space-asteroide-container .animation-rocket {
     animation: travel-rocket 10s;
     animation-fill-mode: both; }
@@ -437,6 +528,109 @@
     animation: travel-rocket-fail 5s;
     animation-timing-function: linear;
     animation-fill-mode: both; }
+  .space-asteroide-container .capitaine-dialog {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 1000px;
+    display: flex;
+    background: #24242471;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 10px; }
+    .space-asteroide-container .capitaine-dialog .capitaine {
+      width: 150px;
+      height: 150px;
+      border: 1px solid white;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      margin: -1px 0 0 -1px; }
+    .space-asteroide-container .capitaine-dialog .dialog {
+      border-radius: 20px;
+      line-height: 24px;
+      color: white;
+      padding: 10px;
+      margin: 10px;
+      width: 600px;
+      font-family: "Bitter", serif;
+      font-size: 20px; }
+  .space-asteroide-container .goToWarehouse {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: "Bitter", serif;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    will-change: transform;
+    padding: 15px; }
+    .space-asteroide-container .goToWarehouse:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform-origin: center; }
+  .space-asteroide-container .warehouse-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .space-asteroide-container .warehouse-container .bg-warehouse {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    .space-asteroide-container .warehouse-container .capitaine-dialog {
+      position: absolute;
+      left: 0;
+      top: 0;
+      max-width: 1000px;
+      display: flex;
+      background: #242424da;
+      border: 1px solid white;
+      border-radius: 10px;
+      margin: 10px; }
+      .space-asteroide-container .warehouse-container .capitaine-dialog .capitaine {
+        width: 150px;
+        height: 150px;
+        border: 1px solid white;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin: -1px 0 0 -1px; }
+      .space-asteroide-container .warehouse-container .capitaine-dialog .dialog-at-warehouse {
+        border-radius: 20px;
+        line-height: 24px;
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        width: 600px;
+        font-family: "Bitter", serif;
+        font-size: 20px;
+        white-space: pre-line; }
+    .space-asteroide-container .warehouse-container .getFood {
+      position: absolute;
+      bottom: 10%;
+      left: 55%;
+      transform: translateX(-50%);
+      color: white;
+      border: 1px solid white;
+      border-radius: 50px;
+      font-size: 20px;
+      font-family: "Bitter", serif;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      will-change: transform;
+      padding: 15px; }
+      .space-asteroide-container .warehouse-container .getFood:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform-origin: center; }
 
 @keyframes travel-rocket {
   0% {
@@ -466,5 +660,10 @@ body {
 
 .displayed {
   display: block; }
+
+.clicked {
+  padding: 50px;
+  opacity: 0;
+  filter: blur(5px); }
 
 /*# sourceMappingURL=app.css.map */
