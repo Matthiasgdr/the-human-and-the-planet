@@ -31,6 +31,7 @@ const goToWarehouse = $container.querySelector('.goToWarehouse')
 const warehouse = $container.querySelector('.warehouse-container')
 const $getFood = $container.querySelector('.getFood')
 const capitaineDialogInWarehouse = $container.querySelector('.dialog-at-warehouse')
+const restartWarehouse = document.querySelector('.js-restart')
 
 const buttonGoToLanding = $container.querySelector('.buttonGoToLanding')
 const cockpit = $container.querySelector('.cockpit-container')
@@ -283,7 +284,6 @@ function changeDialogue(index){
 
 // AFFICHAGE DES HUBLOTS
 
-
 buttonGoToPortHole.addEventListener('click', () => {
     if (clickableRocket) {
         porthole.classList.remove('no-display')
@@ -317,8 +317,6 @@ goToWarehouse.addEventListener('click', () => {
     warehouse.classList.remove('no-display')
 })
 
-
-
 // EST-CE QUE IL PEUT AVOIR DE LA NOURRITURE ?
 
 $getFood.addEventListener('click', getFood)
@@ -329,10 +327,10 @@ function getFood(){
     }
     else{
         capitaineDialogInWarehouse.innerHTML = "I'm sorry, but you've been identified as disabled, sterile or too old, you can't receive food, that's the procedure and it's the only way to get at least some of the rocket's passengers to Mars alive. I'm sorry, it's not my decision."
+        restartWarehouse.classList.remove('no-display')
     }
     $getFood.classList.add('clicked')
 }
-
 
 // ALLER A L'ARRIVE SUR MARS
 
