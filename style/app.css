@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Economica:400,700");
 @import url("https://fonts.googleapis.com/css?family=Bitter|Playfair+Display");
 .begin {
   position: absolute;
@@ -16,7 +17,7 @@
     border: 1px solid white;
     border-radius: 50px;
     font-size: 30px;
-    font-family: "Bitter", serif;
+    font-family: "Economica", serif;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s;
@@ -51,7 +52,7 @@
     border: 1px solid white;
     border-radius: 50px;
     font-size: 20px;
-    font-family: "Bitter", serif;
+    font-family: "Economica", serif;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s;
@@ -77,7 +78,7 @@
       margin: 0 auto;
       color: white;
       font-size: 38px;
-      font-family: 'Bitter', serif;
+      font-family: "Economica", serif;
       transform: translateX(-50%) translateY(-50%);
       will-change: opacity;
       opacity: 0; }
@@ -156,18 +157,35 @@
   100% {
     opacity: 0; } }
 :root {
-  --scale-value: 1; }
+  --scale-value: 1.2; }
 
-.quiz-container {
+.conatiner {
   position: relative;
   width: 100%;
   height: 100vh;
   background-color: #153A4B;
   display: flex;
-  justify-content: center;
-  align-items: center; }
+  flex-direction: column;
+  align-items: center;
+  font-family: "Economica", serif; }
+  .conatiner .restart {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    border: solid 1px white;
+    border-radius: 50px;
+    padding: 20px;
+    margin: 20px auto;
+    font-size: 24px;
+    font-family: "Economica", serif;
+    cursor: pointer;
+    transition: background 0.3s; }
+    .conatiner .restart:hover {
+      background: rgba(255, 255, 255, 0.253); }
 
-.quiz-container.vanish {
+.conatiner.vanish {
   transition-property: opacity;
   transition-duration: 2s;
   transition-timing-function: linear;
@@ -175,28 +193,36 @@
   opacity: 0; }
 
 .quiz,
-.quiz * {
+.quiz *:not(h3) {
   transform: scale(var(--scale-value)); }
 
-.quiz {
+.text {
+  position: absolute;
   width: 600px;
   height: 424px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: calc(50% - 212px);
+  left: calc(50% - 300px); }
+
+.quiz {
+  width: 100%;
+  height: 100vh;
   background: url(../images/quiz.svg) no-repeat;
-  background-size: cover;
-  background-position: top left;
+  background-size: 50%;
+  background-position: center;
   top: calc(50% - 212px);
   left: calc(50% - 300px);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transform: scale(1.5);
-  font-family: "Bitter", serif; }
+  align-items: center; }
 
 .quiz * {
   color: white; }
 
 .quiz h2 {
-  margin: 50px 0;
+  margin: 40px 0;
   font-size: 50px; }
 
 .quiz .choice {
@@ -223,10 +249,30 @@
   animation-iteration-count: infinite; }
 
 .quiz h3 {
-  margin: 60px 0 0 0;
+  margin: 100px 0 0 0;
   font-size: 30px;
   width: 65%;
   text-align: center; }
+
+.buttonGoToExplanation {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  font-size: 20px;
+  font-family: "Economica", serif;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  will-change: transform;
+  padding: 15px; }
+  .buttonGoToExplanation:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform-origin: center; }
 
 @keyframes button {
   0% {
@@ -253,7 +299,7 @@
       border: 1px solid white;
       border-radius: 50px;
       font-size: 20px;
-      font-family: "Bitter", serif;
+      font-family: "Economica", serif;
       cursor: pointer;
       user-select: none;
       transition: all 0.3s;
@@ -286,74 +332,16 @@
       height: 100%; }
     .second-screen .mission-container .mission {
       color: white;
-      font-family: "Bitter", serif;
-      z-index: 1; }
+      font-family: "Economica", serif;
+      z-index: 1;
+      max-width: 1200px; }
       .second-screen .mission-container .mission h1 {
-        font-size: 56px; }
+        font-size: 56px;
+        transform: translateY(-11vh); }
       .second-screen .mission-container .mission p {
-        font-size: 32px; }
-    .second-screen .mission-container .quiz {
-      position: absolute;
-      width: 600px;
-      height: 424px;
-      background: url(../images/quiz.svg) no-repeat;
-      background-size: cover;
-      background-position: top left;
-      top: calc(50% - 212px);
-      left: calc(50% - 300px);
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
-      .second-screen .mission-container .quiz .buttonGoToExplanation {
-        position: absolute;
-        top: 14%;
-        left: 58%;
-        transform: translateX(-50%);
-        color: white;
-        border: 1px solid white;
-        border-radius: 50px;
-        font-size: 20px;
-        font-family: "Bitter", serif;
-        cursor: pointer;
-        user-select: none;
-        transition: all 0.3s;
-        text-transform: uppercase;
-        will-change: transform;
-        padding: 15px; }
-        .second-screen .mission-container .quiz .buttonGoToExplanation:hover {
-          background: rgba(255, 255, 255, 0.1);
-          transform-origin: center; }
-    .second-screen .mission-container .quiz * {
-      color: white; }
-    .second-screen .mission-container .quiz h2 {
-      margin: 50px 0;
-      font-size: 50px; }
-    .second-screen .mission-container .quiz .choice {
-      margin: 40px 0;
-      display: flex;
-      justify-content: space-between;
-      width: 50%; }
-    .second-screen .mission-container .quiz .choice button {
-      width: 70px;
-      color: black;
-      font-size: 20px; }
-    .second-screen .mission-container .quiz .choice button:hover {
-      animation-name: button;
-      animation-duration: 800ms;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite; }
-    .second-screen .mission-container .quiz h3 {
-      margin: 60px 0 0 0;
-      font-size: 30px;
-      width: 65%;
-      text-align: center; }
-@keyframes button {
-  0% {
-    transform: scale(1); }
-  50% {
-    transform: scale(0.8); }
-  100% {
-    transform: scale(1); } }
+        transform: translateY(-10vh);
+        font-size: 32px;
+        white-space: pre-line; }
   .second-screen .buttonGoToRocket {
     position: absolute;
     z-index: 100;
@@ -364,7 +352,7 @@
     border: 1px solid white;
     border-radius: 50px;
     font-size: 20px;
-    font-family: "Bitter", serif;
+    font-family: "Economica", serif;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s;
@@ -427,7 +415,7 @@
         background-color: #A72D66;
         color: white;
         font-size: 20px;
-        font-family: "Bitter", serif;
+        font-family: "Economica", serif;
         padding: 20px;
         cursor: pointer;
         animation: jump 1s infinite;
@@ -447,7 +435,7 @@
       color: white; }
       .second-screen .failed-container .failed h1 {
         font-size: 56px;
-        font-family: "Bitter", serif; }
+        font-family: "Economica", serif; }
       .second-screen .failed-container .failed p {
         font-size: 32px; }
       .second-screen .failed-container .failed .restart {
@@ -457,7 +445,7 @@
         margin: 20px auto;
         width: 300px;
         font-size: 24px;
-        font-family: "Bitter", serif;
+        font-family: "Economica", serif;
         cursor: pointer;
         transition: background 0.3s; }
         .second-screen .failed-container .failed .restart:hover {
@@ -543,7 +531,7 @@
       padding: 10px;
       margin: 10px;
       width: 600px;
-      font-family: "Bitter", serif;
+      font-family: "Economica", serif;
       font-size: 20px;
       white-space: pre-line; }
   .rocket-container .take-up {
@@ -555,7 +543,7 @@
     border: 1px solid white;
     border-radius: 50px;
     font-size: 30px;
-    font-family: "Bitter", serif;
+    font-family: "Economica", serif;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s;
@@ -670,7 +658,7 @@
       padding: 10px;
       margin: 10px;
       width: 600px;
-      font-family: "Bitter", serif;
+      font-family: "Economica", serif;
       font-size: 20px; }
   .space-asteroide-container .goToWarehouse {
     position: absolute;
@@ -681,7 +669,7 @@
     border: 1px solid white;
     border-radius: 50px;
     font-size: 20px;
-    font-family: "Bitter", serif;
+    font-family: "Economica", serif;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s;
@@ -727,7 +715,7 @@
         padding: 10px;
         margin: 10px;
         width: 600px;
-        font-family: "Bitter", serif;
+        font-family: "Economica", serif;
         font-size: 20px;
         white-space: pre-line; }
     .space-asteroide-container .warehouse-container .getFood {
@@ -739,7 +727,7 @@
       border: 1px solid white;
       border-radius: 50px;
       font-size: 20px;
-      font-family: "Bitter", serif;
+      font-family: "Economica", serif;
       cursor: pointer;
       user-select: none;
       transition: all 0.3s;
@@ -777,7 +765,7 @@
     border: 1px solid white;
     border-radius: 50px;
     font-size: 20px;
-    font-family: "Bitter", serif;
+    font-family: "Economica", serif;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s;
@@ -818,7 +806,7 @@
       padding: 10px;
       margin: 10px;
       width: 600px;
-      font-family: "Bitter", serif;
+      font-family: "Economica", serif;
       font-size: 20px;
       white-space: pre-line; }
   .cockpit-container .mars-container {
@@ -849,7 +837,7 @@
       color: white;
       opacity: 0;
       transition: opacity 1s;
-      font-family: "Bitter", serif;
+      font-family: "Economica", serif;
       text-align: center; }
       .cockpit-container .mars-container .congratulations h3 {
         font-size: 56px; }
@@ -868,7 +856,8 @@
   display: flex;
   flex-direction: column;
   transition: transform 1s;
-  user-select: none; }
+  user-select: none;
+  letter-spacing: 2px; }
 
 body {
   overflow: visible; }
@@ -886,5 +875,8 @@ body {
   padding: 50px;
   opacity: 0;
   filter: blur(5px); }
+
+strong {
+  font-weight: bold; }
 
 /*# sourceMappingURL=app.css.map */

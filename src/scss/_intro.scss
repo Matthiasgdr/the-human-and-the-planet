@@ -89,7 +89,7 @@
             margin: 0 auto;
             color: $color;
             font-size: 38px;
-            font-family: 'Bitter', serif;
+            font-family: $font;
             transform: translateX(-50%) translateY(-50%);
             will-change: opacity;
             opacity: 0;

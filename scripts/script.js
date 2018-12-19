@@ -1,7 +1,7 @@
 const $container = document.querySelector('.container')
 const begin = $container.querySelector('.begin')
 const beginButton = begin.querySelector('.begin-button')
-const restart = $container.querySelector('.restart')
+const restart = $container.querySelectorAll('.restart')
 const introductionSentences = $container.querySelectorAll('.sentence')
 const introductionPictures = $container.querySelectorAll('.picture')
 const buttonGoToMission = $container.querySelector('.buttonGoToMission')
@@ -53,10 +53,13 @@ buttonGoToMission.addEventListener('click', () => {
 
 // RESTART
 
-restart.addEventListener('click',
-() =>{
-  window.location.reload();
-})
+for (let i = 0; i < restart.length; i++) {
+    const element = restart[i];
+    element.addEventListener('click',
+    () =>{
+        window.location.reload();
+    })
+}
 
 // QUESTIONNAIRE
 
@@ -66,6 +69,7 @@ const elementQuestion = $quiz.querySelector('.question')
 const $choice = $quiz.querySelector('.choice') 
 const good = $choice.querySelector('.choice-posi')
 const bad = $choice.querySelector('.choice-nega')
+const restartQuiz = document.querySelector('.conatiner>.restart')
 const buttonGoToExplanation = document.querySelector('.buttonGoToExplanation')
 let question = [ //Possibilité d'ajouter des questions
     [
@@ -103,7 +107,6 @@ $choice.addEventListener('click', () => {
     }
     if (i == nb) {
         result()
-        exit()
     }
 })
 
@@ -133,23 +136,23 @@ const result = () => { // Message de réponse
     if (go - stay > 0) {
         elementQuestion.innerHTML = "Welcome on board!"
         elementQuestion.style.marginTop = '25px'
+        buttonGoToExplanation.classList.remove('no-display')
     }
     else if (go - stay <= -nb) {
         elementQuestion.innerHTML = "You stay on earth"
         elementQuestion.style.marginTop = '25px'
+        restartQuiz.classList.remove('no-display')
     }
     else {
         elementQuestion.innerHTML = "Error in your favour, you still come to the adventure"
         elementQuestion.style.marginTop = '10px'
+        buttonGoToExplanation.classList.remove('no-display')
     }
 }
 
 questionSelect()
 
-const exit = () => {
-    $quizContainer.classList.add("vanish")
-    setTimeout(function(){$quizContainer.remove()}, 4000)
-}
+buttonGoToExplanation.addEventListener('click', goDownScene)
 
 // CACHER BOUTON COMMENCER PUIS AJOUT CLASS RUN POUR L'ANIMATION DU PARALLAX
 
@@ -225,6 +228,7 @@ takeUp.addEventListener('click', () => {
         goUpScene()}, 2000)
     if(randomizer == 1){
         failToSpace()
+        buttonGoToPortHole.classList.add('no-display')
         setTimeout(() => {missionFailed.classList.remove('no-display')}, 7000)
     }
     else{

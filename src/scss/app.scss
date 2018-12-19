@@ -11,6 +11,7 @@
     flex-direction: column;
     transition: transform 1s;
     user-select: none;
+    letter-spacing: 2px;
 }
 
 body{
@@ -33,4 +34,8 @@ body{
     padding: 50px;
     opacity: 0;
     filter: blur(5px);
+}
+
+strong{
+    font-weight: bold;
 }
